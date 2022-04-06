@@ -2,6 +2,7 @@
 
 namespace DataTimeExceptione
 {
+    enum MenuBar {Share_Status=1, Get_All_Status, Get_Status_By_ID, Filter_Status_By_Date, Quit=0}
     internal class Program
     {
         static void Main(string[] args)

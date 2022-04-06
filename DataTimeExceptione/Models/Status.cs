@@ -22,6 +22,18 @@ namespace DataTimeExceptione.Models
          */
         #endregion
 
+        #region FIELDS
+        private static int _id;
+        private  string _title;
+        private string _content;
+        private DateTime _shareddate;
+
+        #endregion
+
+        #region PROPERTIES
+
+
+        #endregion
 
     }
 }
