@@ -31,9 +31,52 @@ namespace DataTimeExceptione.Models
         #endregion
 
         #region PROPERTIES
-
+        public int ID { get; }
+        public string Title 
+        {
+            get 
+            {
+                return _title;
+            }
+            set
+            {
+                _title = value;
+            }
+        }
+        public string Content 
+        {
+            get
+            {
+                return _content;
+            
+            }
+            set
+            {
+                _content=value;
+            }
+        }
+        public DateTime Shareddate { get; set; }    
 
         #endregion
 
+        #region CONSTRUCTORS
+
+        public Status(string title,string content)
+        {
+            _id++;
+            ID = _id;
+            Title = title;
+            Content = content;
+        }
+        #endregion
+
+        #region METHODS
+        public void GetStatusInfo()
+        {
+            Console.Write($"\nID status: {ID}Title: {Title}");
+
+        }
+      
+        #endregion
     }
 }
