@@ -23,7 +23,7 @@ namespace DataTimeExceptione.Models
         #endregion
 
         #region FIELDS
-        private static int _id;
+        private static int _idstatus;
         private  string _title;
         private string _content;
         private DateTime _shareddate;
@@ -31,7 +31,17 @@ namespace DataTimeExceptione.Models
         #endregion
 
         #region PROPERTIES
-        public int ID { get; }
+        public int Idstatus 
+        {
+            get
+            {
+                return _idstatus;
+            }
+            set 
+            {
+                _idstatus = value;
+            }
+        }
         public string Title 
         {
             get 
@@ -55,7 +65,17 @@ namespace DataTimeExceptione.Models
                 _content=value;
             }
         }
-        public DateTime Shareddate { get; set; }    
+        public DateTime Shareddate 
+        {
+            get
+            {
+                return _shareddate;
+            }
+            set
+            {
+                _shareddate = value;
+            }
+        }    
 
         #endregion
 
@@ -63,17 +83,18 @@ namespace DataTimeExceptione.Models
 
         public Status(string title,string content)
         {
-            _id++;
-            ID = _id;
+            _idstatus++;
+            Idstatus = _idstatus;
             Title = title;
             Content = content;
+            Shareddate = DateTime.Now;
         }
         #endregion
 
         #region METHODS
         public void GetStatusInfo()
         {
-            Console.Write($"\nID status: {ID}Title: {Title}");
+            Console.Write($"\nID status: {Idstatus}\nTitle: {Title}\nStatus shared {DateTime.Now-Shareddate} age");
 
         }
       
