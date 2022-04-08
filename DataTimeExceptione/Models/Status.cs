@@ -33,14 +33,8 @@ namespace DataTimeExceptione.Models
         #region PROPERTIES
         public int Idstatus 
         {
-            get
-            {
-                return _idstatus;
-            }
-            set 
-            {
-                _idstatus = value;
-            }
+            get;
+           
         }
         public string Title 
         {
@@ -71,10 +65,11 @@ namespace DataTimeExceptione.Models
             {
                 return _shareddate;
             }
-            set
+            set 
             {
                 _shareddate = value;
             }
+            
         }    
 
         #endregion
@@ -94,10 +89,15 @@ namespace DataTimeExceptione.Models
         #region METHODS
         public void GetStatusInfo()
         {
-            Console.Write($"\nID status: {Idstatus}\nTitle: {Title}\nStatus shared {DateTime.Now-Shareddate} age");
+            Console.Write($"\nID status: {Idstatus}\nTitle: {Title}\nStatus shared {DateTime.Now-Shareddate} age\n");
+            Console.WriteLine("++++++++++++++++++");
 
         }
-      
+        public override string ToString()
+        {
+            return $"\nID status: {Idstatus}\nTitle: {Title}\nStatus shared {DateTime.Now - Shareddate} age";
+        }
+
         #endregion
     }
 }
