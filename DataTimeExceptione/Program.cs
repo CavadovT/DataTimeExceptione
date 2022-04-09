@@ -22,9 +22,10 @@ Menu
 ps: Tapşırıqda bütün şərtləri qeyd etməmişəm bəzi şərtləri özünüz fikirləşib yazmalısınız.
              */
             #endregion
-            User user1=new User();
+            User user1 = new User("Tural");
             try
             {
+              
                 do
                 {
                     Console.Write($"\n1-Share status\n2-Get all statuses\n3-Get status by id\n4-Filter status by data\0-Quit is program\n");

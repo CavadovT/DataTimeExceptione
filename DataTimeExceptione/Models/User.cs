@@ -52,11 +52,12 @@ namespace DataTimeExceptione.Models
             }
         }
 
+
         #endregion
 
 
         #region METHODS
-        public User()
+        public User(string name)
         {
             _iduser++;
             Iduser = _iduser;

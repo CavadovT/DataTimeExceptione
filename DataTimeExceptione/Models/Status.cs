@@ -89,7 +89,7 @@ namespace DataTimeExceptione.Models
         #region METHODS
         public void GetStatusInfo()
         {
-            Console.Write($"\nID status: {Idstatus}\nTitle: {Title}\nStatus shared {DateTime.Now-Shareddate} age\n");
+            Console.Write($"\nID status: {Idstatus}\nTitle: {Title}\nStatus shared {(DateTime.Now-Shareddate).Seconds} seconds age\n");
             Console.WriteLine("++++++++++++++++++");
 
         }
