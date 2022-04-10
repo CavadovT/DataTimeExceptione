@@ -73,15 +73,18 @@ namespace DataTimeExceptione.Models
         public void GetStatusByID(int? idinput) // bu halda onsuzda bize nul id gelmir cunki consoldan oxunan ededi biz zaten convert edirik bu sert 
                                                    // burda yoxlamaga ehtiyac qalmir onsuzda bize program cs den null gelmiyecek!!!
         {
-            Status statfind = Statuses.Find(sval => sval.Idstatus == idinput);
-            if (statfind == null) // tapilan kolleksiya yoxdur ve type kompleks referans null qsaytaracaq
+            if (idinput == null) 
             {
-
-                throw new NoteFoundException("Not Found");
+                Console.WriteLine("Id is null");
+                return;
             }
-            statfind.GetStatusInfo(); // eks halda else hemin statusun ozunu qaytarir bir kolleksiyanin icinden bir kolleksiya elementini
-                                      // her bir kolleksiyanin her bir elemntide ozu kolleksiyadir yeni classdir ve onun daxilinde 
-                                      // kompleks datalar saxlanilir misal/ statusun adi stringden, statusun zamani datatime den ve sair ve ilaxir
+            
+           List <Status> statfind = Statuses.FindAll(sval => sval.Idstatus == idinput);
+            foreach (var item in statfind)
+            {
+                item.GetStatusInfo();
+            }
+            
 
         }
         public void GetAllStatus() 
@@ -96,7 +99,7 @@ namespace DataTimeExceptione.Models
         {
             int countforstatus = 0;
            
-            if (User._iduser == id)
+            if (User._iduser    == id)
             {
                 foreach (var item in Statuses)
                 {
